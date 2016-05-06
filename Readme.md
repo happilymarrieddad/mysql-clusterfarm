@@ -1,4 +1,4 @@
-# mysql-clustered
+# mysql-clusterfarm
 
 [![NPM Version][mysql-url]]
 
@@ -23,7 +23,7 @@ This package relies HEAVILY on the mysql node package. It has been modified to h
 ## Install
 Run this on every application instance that is going to use the cluster  
 ``` sh
-$ npm install mysql-clustered
+$ npm install mysql-clusterfarm
 ```
   
  After following the steps below, all you have to do is the following
@@ -135,7 +135,7 @@ The configuration variables are the same as node-mysql createPool(). https://www
   
 ``` sh
 var async = require('async'),
-	cluster = require('mysql-clustered').createCluster()
+	cluster = require('mysql-clusterfarm').createCluster()
 
 async.series([
 	function(cb) {
