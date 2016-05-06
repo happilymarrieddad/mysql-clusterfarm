@@ -1,0 +1,24 @@
+{
+  "name": "mysql-clusterfarm",
+  "version": "0.1.7",
+  "description": "Easily cluster mysql masters and slaves",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mysql",
+    "cluster",
+    "master",
+    "slave"
+  ],
+  "author": "Nick Kotenberg",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.4",
+    "bignumber.js": "2.1.4",
+    "isarray": "^1.0.0",
+    "readable-stream": "~1.1.13",
+    "request": "^2.72.0"
+  }
+}
