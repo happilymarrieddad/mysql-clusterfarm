@@ -25,8 +25,10 @@ Run this on every application instance that is going to use the cluster
 ``` sh
 $ npm install mysql-clusterfarm
 ```
-  
- After following the steps below, all you have to do is the following
+
+Check the 'Basic Usage' for information on how to add servers to the cluster
+
+ All you have to do is the following
  ``` sh
  cluster.query('SELECT some_column FROM some_table',function(err,rows) {  })
  ```
@@ -77,7 +79,7 @@ $ emacs /etc/mysql/my.cnf
 ```
 
 ``` sh
-server-id                 		= 101
+server-id = 101
 ```
   
 save,exit,restart mysql  
@@ -85,7 +87,7 @@ save,exit,restart mysql
 $ service mysql restart
 ```
   
-Create a user inside mysql to query off of and one to replicate off of  
+Create a user inside mysql to query off of and one to replicate off of (PLEASE adjust the IP's for the user. It is just an example.)  
 ``` sh
 CREATE USER 'someuser'@'172.%' IDENTIFIED BY 'terriblepassword';
 GRANT ALL ON *.* TO 'someuser'@'172.%';
@@ -109,7 +111,7 @@ Use whatever tool you want to get the scripts from the master database to all ot
   
 On the slave  
 ``` sh
-CHANGE MASTER TO
+CHANGE MASTER TO 
 MASTER_HOST='master_host_name',
 MASTER_USER='replication_user_name',
 MASTER_PASSWORD='replication_password',
@@ -140,14 +142,12 @@ var async = require('async'),
 async.series([
 	function(cb) {
 		cluster.addMaster(
-			'MASTER1',
-			{
+			'MASTER1', {
 				host:'someip1',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip1',
 				user:'query_user',
 				password:'password',
@@ -157,14 +157,12 @@ async.series([
 	},
 	function(cb) {
 		cluster.addMaster(
-			'MASTER2',
-			{
+			'MASTER2', {
 				host:'someip2',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip2',
 				user:'query_user',
 				password:'password',
@@ -175,14 +173,12 @@ async.series([
 	function(cb) {
 		cluster.addSlave(
 			'SLAVE1',
-			'MASTER1',
-			{
+			'MASTER1', {
 				host:'someip3',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip3',
 				user:'query_user',
 				password:'password',
@@ -193,14 +189,12 @@ async.series([
 	function(cb) {
 		cluster.addSlave(
 			'SLAVE2',
-			'MASTER1',
-			{
+			'MASTER1', {
 				host:'someip4',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip4',
 				user:'query_user',
 				password:'password',
@@ -211,14 +205,12 @@ async.series([
 	function(cb) {
 		cluster.addSlave(
 			'SLAVE3',
-			'MASTER2',
-			{
+			'MASTER2', {
 				host:'someip3',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip3',
 				user:'query_user',
 				password:'password',
@@ -229,14 +221,12 @@ async.series([
 	function(cb) {
 		cluster.addSlave(
 			'SLAVE4',
-			'MASTER2',
-			{
+			'MASTER2', {
 				host:'someip4',
 				user:'root',
 				password:'password',
 				database:'test_db'
-			},
-			{
+			}, {
 				host:'someip4',
 				user:'query_user',
 				password:'password',
