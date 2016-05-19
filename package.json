@@ -1,6 +1,6 @@
 {
   "name": "mysql-clusterfarm",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Easily cluster mysql masters and slaves",
   "main": "index.js",
   "scripts": {
