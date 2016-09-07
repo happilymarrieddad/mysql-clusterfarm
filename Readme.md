@@ -56,7 +56,7 @@
 ## Install
 
 ```sh
-$ npm install mysql
+$ npm install mysql-clusterfarm
 ```
 
 For information about the previous 0.9.x releases, visit the [v0.9 branch][].
@@ -65,7 +65,7 @@ Sometimes I may also ask you to install the latest version from Github to check
 if a bugfix is working. In this case, please do:
 
 ```sh
-$ npm install mysqljs/mysql
+$ npm install happilymarrieddad/mysql-clusterfarm
 ```
 
 [v0.9 branch]: https://github.com/mysqljs/mysql/tree/v0.9
@@ -78,7 +78,7 @@ require compiling, and is 100% MIT licensed.
 Here is an example on how to use it:
 
 ```js
-var mysql      = require('mysql');
+var mysql      = require('mysql-clusterfarm');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'me',
@@ -149,7 +149,7 @@ of the following:
 The recommended way to establish a connection is this:
 
 ```js
-var mysql      = require('mysql');
+var mysql      = require('mysql-clusterfarm');
 var connection = mysql.createConnection({
   host     : 'example.org',
   user     : 'bob',
@@ -169,7 +169,7 @@ connection.connect(function(err) {
 However, a connection can also be implicitly established by invoking a query:
 
 ```js
-var mysql      = require('mysql');
+var mysql      = require('mysql-clusterfarm');
 var connection = mysql.createConnection(...);
 
 connection.query('SELECT 1', function(err, rows) {
@@ -308,7 +308,7 @@ Unlike `end()` the `destroy()` method does not take a callback argument.
 
 Use pool directly.
 ```js
-var mysql = require('mysql');
+var mysql = require('mysql-clusterfarm');
 var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'example.org',
@@ -328,7 +328,7 @@ Connections can be pooled to ease sharing a single connection, or managing
 multiple connections.
 
 ```js
-var mysql = require('mysql');
+var mysql = require('mysql-clusterfarm');
 var pool  = mysql.createPool({
   host     : 'example.org',
   user     : 'bob',
@@ -345,7 +345,7 @@ When you are done with a connection, just call `connection.release()` and the
 connection will return to the pool, ready to be used again by someone else.
 
 ```js
-var mysql = require('mysql');
+var mysql = require('mysql-clusterfarm');
 var pool  = mysql.createPool(...);
 
 pool.getConnection(function(err, connection) {
@@ -532,7 +532,7 @@ by this module.
 PoolClusterFarm allows for a complete replicated MySQL farm to be handled with the mysql module. For more information on MySQL replicating, please navigate to http://dev.mysql.com/doc/refman/5.7/en/replication.html. Basically, this module allows an unlimited amount of scaling with 1 to Many Masters and 0 to Many Slaves. In order to use this module, you must set up replication masters and slaves using the tutorial above.
 
 ```js
-var mysql = require('mysql');
+var mysql = require('mysql-clusterfarm');
 var poolClusterFarm = mysql.createPoolClusterFarm();
 
 poolClusterFarm.add('MASTER0','master',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.1'});
@@ -1110,7 +1110,7 @@ fatal error is triggered by trying to connect to an invalid port. Therefore the
 error object is propagated to both pending callbacks:
 
 ```js
-var connection = require('mysql').createConnection({
+var connection = require('mysql-clusterfarm').createConnection({
   port: 84943, // WRONG PORT
 });
 
@@ -1224,7 +1224,7 @@ It is not recommended (and may go away / change in the future) to disable type
 casting, but you can currently do so on either the connection:
 
 ```js
-var connection = require('mysql').createConnection({typeCast: false});
+var connection = require('mysql-clusterfarm').createConnection({typeCast: false});
 ```
 
 Or on the query level:

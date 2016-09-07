@@ -4,7 +4,7 @@ This file is a manually maintained list of changes for each release. Feel free
 to add your changes here when sending pull requests. Also send corrections if
 you spot any mistakes.
 
-## v2.3.2 (2016-09-07)
+## v2.3.3 (2016-09-07)
 
 	* Fixed README.md and package.json
 
