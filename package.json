@@ -11,7 +11,7 @@
     "Nathan Woltman <nwoltman@outlook.com>",
     "Nick Kotenberg <happilymarrieddad@gmail.com>"
   ],
-  "repository": "mysqljs/mysql",
+  "repository": "happilymarrieddad/mysql-clusterfarm",
   "dependencies": {
     "bignumber.js": "2.3.0",
     "readable-stream": "1.1.14",
