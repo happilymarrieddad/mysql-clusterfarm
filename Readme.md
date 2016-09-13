@@ -72,7 +72,7 @@ $ npm install happilymarrieddad/mysql-clusterfarm
 
 ## PoolClusterFarm
 
-NEW CHANGES! PoolClusterFarm allows for a complete replicated MySQL farm to be handled with the mysql module. For more information on MySQL replicating, please navigate to http://dev.mysql.com/doc/refman/5.7/en/replication.html. Basically, this module allows an unlimited amount of scaling with 1 to Many Masters and 0 to Many Slaves. In order to use this module, you must set up replication masters and slaves using the tutorial above.
+NEW CHANGES! PoolClusterFarm allows for a complete replicated MySQL farm to be handled with the mysql module. For more information on MySQL replicating, please navigate to http://dev.mysql.com/doc/refman/5.7/en/replication.html. Basically, this module allows unlimited scaling with 1 to Many Masters and 0 to Many Slaves. In order to use this module, you must set up replication masters and slaves using the tutorial above.
 
 ```js
 var mysql = require('mysql-clusterfarm');

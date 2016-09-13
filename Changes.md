@@ -4,6 +4,10 @@ This file is a manually maintained list of changes for each release. Feel free
 to add your changes here when sending pull requests. Also send corrections if
 you spot any mistakes.
 
+## v2.3.6 (2016-09-13)
+
+	* Fixed a strange but with passed in functions. It should work great now.
+
 ## v2.3.5 (2016-09-07)
 
 	* Fixed README.md and package.json
