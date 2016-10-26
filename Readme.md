@@ -72,19 +72,19 @@ $ npm install happilymarrieddad/mysql-clusterfarm
 
 ## PoolClusterFarm
 
-NEW CHANGES! PoolClusterFarm allows for a complete replicated MySQL farm to be handled with the mysql module. For more information on MySQL replicating, please navigate to http://dev.mysql.com/doc/refman/5.7/en/replication.html. Basically, this module allows unlimited scaling with 1 to Many Masters and 0 to Many Slaves. In order to use this module, you must set up replication masters and slaves using the tutorial above.
+NEW CHANGES! PoolClusterFarm allows for a complete replicated MySQL farm to be handled with the mysql module. For more information on MySQL replicating, please navigate to [http://dev.mysql.com/doc/refman/5.7/en/replication.html]: http://dev.mysql.com/doc/refman/5.7/en/replication.html. Basically, this module allows unlimited scaling with 1 to Many Masters and 0 to Many Slaves. In order to use this module, you must set up replication masters and slaves using the tutorial above.
 
 ```js
 var mysql = require('mysql-clusterfarm');
 var poolClusterFarm = mysql.createPoolClusterFarm();
 
-poolClusterFarm.add('MASTER0','master',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.1'});
-poolClusterFarm.add('MASTER1','master',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.2'});
+poolClusterFarm.addMaster('MASTER0',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.1'});
+poolClusterFarm.addMaster('MASTER1',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.2'});
 
-poolClusterFarm.add('SLAVE0','slave',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.3'});
-poolClusterFarm.add('SLAVE1','slave',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.4'});
-poolClusterFarm.add('SLAVE2','slave',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.5'});
-poolClusterFarm.add('SLAVE3','slave',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.6'});
+poolClusterFarm.addSlave('SLAVE0','MASTER0',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.3'});
+poolClusterFarm.addSlave('SLAVE1','MASTER0',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.4'});
+poolClusterFarm.addSlave('SLAVE2','MASTER1',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.5'});
+poolClusterFarm.addSlave('SLAVE3','MASTER1',{database:'test',user:'admin',password:'somepassword',host:'10.0.0.6'});
 
 poolClusterFarm.query('SELECT id,first FROM users WHERE id = 1',function(err,rows) { console.log(err);console.log(rows) });
 poolClusterFarm.query('UPDATE users SET first = "testing" WHERE id = 1',function(err,rows) { console.log(err);console.log(rows) });
