@@ -1,2 +1,4 @@
 node_modules/
 npm-debug.log
+test/clusterfarm/database.json
+test/clusterfarm/config.json
