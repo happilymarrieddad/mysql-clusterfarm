@@ -42,6 +42,7 @@
     "lint": "eslint lib/**/*.js index.js test/**/*.js",
     "test": "node test/run.js",
     "test-ci": "node test/run-cov.js lcovonly",
-    "test-cov": "node test/run-cov.js"
+    "test-cov": "node test/run-cov.js",
+    "test-cluster":"rm *.tgz && npm pack && cp *.tgz /home/nick/Projects/Nodejs/f4scc/server/app/"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "clusterfarm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node testingServers.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
