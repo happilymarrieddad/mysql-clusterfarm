@@ -1,7 +1,7 @@
 {
   "name": "mysql-clusterfarm",
   "description": "A node.js driver for mysql. It was branched from MySQL to give farming capabilities. It is written in JavaScript, does not require compiling, and is 100% MIT licensed.",
-  "version": "2.4.2",
+  "version": "2.5.0",
   "license": "MIT",
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "contributors": [
@@ -43,6 +43,6 @@
     "test": "node test/run.js",
     "test-ci": "node test/run-cov.js lcovonly",
     "test-cov": "node test/run-cov.js",
-    "test-cluster":"rm *.tgz && npm pack && cp *.tgz /home/nick/Projects/Nodejs/f4scc/server/app/"
+    "test-cluster": "rm *.tgz && npm pack && cp *.tgz /home/nick/Projects/Nodejs/f4scc/server/app/"
   }
 }
