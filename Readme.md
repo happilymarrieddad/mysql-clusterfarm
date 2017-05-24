@@ -109,7 +109,7 @@ var clusterConfig = {
 var poolClusterFarm = mysql.createPoolClusterFarm(clusterConfig);
 ```
 
-## Deadlock Handling
+## Deadlock Handling - https://www.npmjs.com/package/node-mysql-deadlock-retries
 I have added a new feature (deadlock handling) into the package. Let me know how it works for you!
 
 ## Introduction
