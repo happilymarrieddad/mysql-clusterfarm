@@ -7,6 +7,9 @@
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
+## Recent Updates
+- Deadlock handling has been added to the clusterfarm package. See below for more information.
+
 ## Table of Contents
 
 - [Install](#install)
@@ -94,11 +97,20 @@ poolClusterFarm.query('UPDATE users SET first = "testing" WHERE id = 1',function
 ### PoolCluster options
 ```js
 var clusterConfig = {
-  debug:true
+  debug:true,
+  useDeadlockHandling:true,
+  deadlockConfig : {
+    retries:5,
+    minMillis:1,
+    maxMillis:100
+  }
 };
 
 var poolClusterFarm = mysql.createPoolClusterFarm(clusterConfig);
 ```
+
+## Deadlock Handling
+I have added a new feature (deadlock handling) into the package. Let me know how it works for you!
 
 ## Introduction
 

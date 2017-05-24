@@ -14,6 +14,7 @@
   "repository": "happilymarrieddad/mysql-clusterfarm",
   "dependencies": {
     "bignumber.js": "2.3.0",
+    "node-mysql-deadlock-retries": "^1.0.1",
     "readable-stream": "1.1.14",
     "sqlstring": "2.0.1"
   },
